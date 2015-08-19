@@ -21,12 +21,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="textCapSentences"
         android:ems="10"
         android:id="@+id/edit_text_player_name"
         android:layout_gravity="center_horizontal"
         android:hint="Name"
-        android:paddingTop="20dp" />
+        android:paddingTop="20dp"
+        />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -43,7 +44,8 @@
             android:text="@string/text_view_blue_team"
             android:id="@+id/text_view_blue_team"
             android:textColor="#ff0029ff"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
         <Switch
             android:layout_width="wrap_content"
@@ -73,5 +75,5 @@
         android:text="@string/button_confirm_player"
         android:id="@+id/button_confirm_player"
         android:enabled="false"
-        style="@style/btnStyleArsenic" />
+        style="@style/btnStyleYellow" />
 </LinearLayout>

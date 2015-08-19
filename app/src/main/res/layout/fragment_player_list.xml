@@ -15,7 +15,7 @@
         android:text="@string/button_add_player"
         android:id="@+id/button_add_player"
         android:layout_gravity="right"
-        style="@style/btnStyleArsenic" />
+        style="@style/btnStyleYellow" />
 
     <ListView
         android:id="@android:id/list"
@@ -29,6 +29,6 @@
         android:text="@string/button_start_game_now"
         android:id="@+id/button_initiate_game"
         android:layout_gravity="center_horizontal"
-        style="@style/btnStyleArsenic" />
+        style="@style/btnStyleYellow" />
 
 </LinearLayout>

@@ -28,7 +28,8 @@
         android:layout_gravity="center_horizontal"
         android:textStyle="bold"
         android:paddingTop="20dp"
-        android:paddingBottom="20dp" />
+        android:paddingBottom="20dp"
+        style="@style/condensed_normal_large"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -42,14 +43,14 @@
             android:text="@string/button_new_game"
             android:id="@+id/button_new_game"
             android:layout_gravity="bottom|center_horizontal"
-            style="@style/btnStyleArsenic" />
+            style="@style/btnStyleYellow" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_restart_game_text"
             android:id="@+id/button_restart"
-            style="@style/btnStyleArsenic" />
+            style="@style/btnStyleYellow" />
     </LinearLayout>
 
     <ScrollView
@@ -63,6 +64,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/text_view_quotes" />
+            android:id="@+id/text_view_quotes"
+            style="@style/condensed_normal_large" />
     </ScrollView>
 </LinearLayout>

@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -46,8 +47,8 @@ public class ChallengeFragment extends Fragment {
     ImageView mImageViewPlayer2;
     TextView mTextViewNamePlayer1;
     TextView mTextViewNamePlayer2;
-    Button mButtonWinPlayer1;
-    Button mButtonWinPlayer2;
+    ImageButton mButtonWinPlayer1;
+    ImageButton mButtonWinPlayer2;
     Bundle mBundle;
     TextView mTextViewPenalty;
 
@@ -195,8 +196,8 @@ public class ChallengeFragment extends Fragment {
     }
 
     private void prepareWinButtonsAndNextChallenge(View rootView) {
-        mButtonWinPlayer1 = (Button) rootView.findViewById(R.id.button_win_player_1);
-        mButtonWinPlayer2 = (Button) rootView.findViewById(R.id.button_win_player_2);
+        mButtonWinPlayer1 = (ImageButton) rootView.findViewById(R.id.button_win_player_1);
+        mButtonWinPlayer2 = (ImageButton) rootView.findViewById(R.id.button_win_player_2);
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -248,8 +249,6 @@ public class ChallengeFragment extends Fragment {
     }
 
     private void wireUpPlayersView(View rootView) {
-        mImageViewPlayer1 = (ImageView) rootView.findViewById(R.id.image_view_player_1);
-        mImageViewPlayer2 = (ImageView) rootView.findViewById(R.id.image_view_player_2);
         mTextViewNamePlayer1 = (TextView) rootView.findViewById(R.id.text_view_player_1);
         mTextViewNamePlayer2 = (TextView) rootView.findViewById(R.id.text_view_player_2);
     }

@@ -2,7 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="co.mobilemakers.drinking.ChallengeFragment">
+    tools:context="co.mobilemakers.drinking.ChallengeFragment"
+              android:background="#FFFFFF"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,11 +34,12 @@
 
             <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/button_win_player_1"
                 android:src="@drawable/placeholder_male_superhero"
                 android:scaleType="centerCrop"
-                android:adjustViewBounds="false"/>
+                android:adjustViewBounds="false"
+                android:background="@null"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -61,10 +64,11 @@
 
             <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/button_win_player_2"
                 android:src="@drawable/placeholder_male_superhero"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:background="@null"/>
 
             <TextView
                 android:layout_width="wrap_content"

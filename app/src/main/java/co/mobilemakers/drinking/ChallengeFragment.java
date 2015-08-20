@@ -43,8 +43,6 @@ public class ChallengeFragment extends Fragment {
 
     TextView mTextViewChallenge;
     TextView mTextViewChallengeTitle;
-    ImageView mImageViewPlayer1;
-    ImageView mImageViewPlayer2;
     TextView mTextViewNamePlayer1;
     TextView mTextViewNamePlayer2;
     ImageButton mButtonWinPlayer1;
@@ -57,10 +55,13 @@ public class ChallengeFragment extends Fragment {
     public ChallengeFragment() {
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_challenge, container, false);
+        prepareWinButtonsAndNextChallenge(rootView);
         mChallenges = retrieveChallenges();
         mTextViewPenalty = (TextView) rootView.findViewById(R.id.text_view_penalty);
         wireUpChallengeText(rootView);
@@ -84,7 +85,6 @@ public class ChallengeFragment extends Fragment {
             prepareBlueTeamPlayerView();
         }
         setTextPenalty();
-        prepareWinButtonsAndNextChallenge(rootView);
         return rootView;
     }
 
@@ -180,14 +180,20 @@ public class ChallengeFragment extends Fragment {
             mBluePlayer = mRandom.nextInt(mTeamUnique.size());
         }
         Player player = mTeamUnique.get(mBluePlayer);
-        mImageViewPlayer2.setImageBitmap(getBitmap(player));
+        mButtonWinPlayer2.setImageBitmap(getBitmap(player));
         mTextViewNamePlayer2.setText(player.getName());
+    }
+
+    @Override
+    public void onDestroy() {
+
+        super.onDestroy();
     }
 
     private void preparePlayer1Solo() {
         mRedPlayer = mRandom.nextInt(mTeamUnique.size());
         Player player = mTeamUnique.get(mRedPlayer);
-        mImageViewPlayer1.setImageBitmap(getBitmap(player));
+        mButtonWinPlayer1.setImageBitmap(getBitmap(player));
         mTextViewNamePlayer1.setText(player.getName());
     }
 
@@ -232,7 +238,7 @@ public class ChallengeFragment extends Fragment {
     private void prepareBlueTeamPlayerView() {
         mBluePlayer = mRandom.nextInt(mTeamBlue.size());
         Player player = mTeamBlue.get(mBluePlayer);
-        mImageViewPlayer2.setImageBitmap(getBitmap(player));
+        mButtonWinPlayer2.setImageBitmap(getBitmap(player));
         mTextViewNamePlayer2.setText(player.getName());
     }
 
@@ -244,7 +250,7 @@ public class ChallengeFragment extends Fragment {
     private void prepareRedTeamPlayerView() {
         mRedPlayer = mRandom.nextInt(mTeamRed.size());
         Player player = mTeamRed.get(mRedPlayer);
-        mImageViewPlayer1.setImageBitmap(getBitmap(player));
+        mButtonWinPlayer1.setImageBitmap(getBitmap(player));
         mTextViewNamePlayer1.setText(player.getName());
     }
 

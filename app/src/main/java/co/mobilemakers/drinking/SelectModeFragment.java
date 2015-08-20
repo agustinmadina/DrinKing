@@ -50,8 +50,7 @@ public class SelectModeFragment extends Fragment {
                 PlayerListFragment playerListFragment = new PlayerListFragment();
                 playerListFragment.setArguments(bundle);
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.container, playerListFragment).
-                        addToBackStack(null).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, playerListFragment).addToBackStack(null).commit();
             }
         });
         return rootView;

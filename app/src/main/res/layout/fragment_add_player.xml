@@ -1,79 +1,101 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="co.mobilemakers.drinking.AddPlayerActivity$PlaceholderFragment"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:background="#FFFFFF"
+    android:weightSum="1">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+
 
     <ImageButton
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:id="@+id/image_button_player_photo"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/placeholder_male_superhero"
-        android:scaleType="centerCrop" />
-
-    <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textCapSentences"
-        android:ems="10"
-        android:id="@+id/edit_text_player_name"
-        android:layout_gravity="center_horizontal"
-        android:hint="Name"
-        android:paddingTop="20dp"
-        />
+        android:layout_height="0dp"
+        android:id="@+id/image_button_player_photo"
+        android:src="@mipmap/placeholder"
+        android:scaleType="centerCrop"
+        android:background="@null"
+        android:layout_weight="2"/>
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:paddingTop="25dp"
-        android:paddingBottom="25dp">
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingTop="15dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_view_blue_team"
-            android:id="@+id/text_view_blue_team"
-            android:textColor="#ff0029ff"
-            android:textStyle="bold"
-            />
+            android:gravity="center_horizontal"
+            android:layout_margin="10dp">
 
-        <Switch
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/text_view_blue_team"
+                android:id="@+id/text_view_blue_team"
+                android:textColor="#ff0029ff"
+                android:textStyle="bold"
+                />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/switch_player_team"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textOn="Red"
+                android:textOff="Blue"
+                android:enabled="true"
+                android:showText="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/text_view_red_team"
+                android:id="@+id/text_view_red_team"
+                android:textStyle="bold"
+                android:textColor="#FF5252" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="144dp"
             android:layout_height="wrap_content"
-            android:id="@+id/switch_player_team"
+            android:inputType="textCapSentences"
+            android:ems="10"
+            android:id="@+id/edit_text_player_name"
             android:layout_gravity="center_horizontal"
-            android:checked="false"
-            android:textOn="Red"
-            android:textOff="Blue"
-            android:enabled="true"
-            android:showText="false" />
+            android:hint="Name"
+            android:layout_margin="10dp"/>
 
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_view_red_team"
-            android:id="@+id/text_view_red_team"
-            android:textStyle="bold"
-            android:textColor="#ffff0007" />
+            android:text="@string/button_confirm_player"
+            android:id="@+id/button_confirm_player"
+            android:enabled="false"
+            style="@style/btnStyleYellow"
+            android:layout_margin="10dp"/>
 
     </LinearLayout>
-
-    <Button
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_confirm_player"
-        android:id="@+id/button_confirm_player"
-        android:enabled="false"
-        style="@style/btnStyleYellow" />
-</LinearLayout>
+        android:layout_margin="18dp"
+        android:clickable="true"
+        app:layout_anchor="@id/image_button_player_photo"
+        app:layout_anchorGravity="bottom|right|end"
+        android:layout_marginBottom="-32dp"
+        android:src="@mipmap/ic_camera_white"        />
+</android.support.design.widget.CoordinatorLayout>

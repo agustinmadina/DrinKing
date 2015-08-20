@@ -85,7 +85,7 @@ public class PlayerListFragment extends ListFragment {
                         bundle.putParcelableArrayList(UNIQUE_TEAM, mAdapter.mPlayers);
                     }
                     challengeFragment.setArguments(bundle);
-                    fragmentManager.beginTransaction().replace(R.id.container, challengeFragment).commit();
+                    fragmentManager.beginTransaction().replace(R.id.container, challengeFragment).addToBackStack(null).commit();
                 }
             }
         });

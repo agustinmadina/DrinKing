@@ -1,11 +1,14 @@
 package co.mobilemakers.drinking;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 
 
 public class GameActivity extends ActionBarActivity {
@@ -17,7 +20,7 @@ public class GameActivity extends ActionBarActivity {
         customizeActionBar();
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new StartFragment()).addToBackStack(null)
+                    .replace(R.id.container, new StartFragment())
                     .commit();
         }
     }
@@ -28,6 +31,7 @@ public class GameActivity extends ActionBarActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setIcon(R.drawable.ic_launcher);
     }
+
 
 
     @Override
@@ -57,6 +61,16 @@ public class GameActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+//    @Override
+//    public void onBackPressed() {
+//        int fragments = getFragmentManager().getBackStackEntryCount();
+//        if (fragments == 1) {
+//            // make layout invisible since last fragment will be removed
+//            finish();
+//        }
+//        super.onBackPressed();
+//    }
 
 
 }

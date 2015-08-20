@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -30,12 +32,13 @@ public class AddPlayerFragment extends Fragment {
 
 
     Button mButtonConfirmPlayer;
-    ImageButton mPhotoPlayer;
+    ImageView mPhotoPlayer;
     EditText mEditTextPlayername;
     Switch mSwitchTeam;
     Player mPlayer;
     String mName, mTeam;
     TextView mTeamBlue,mTeamRed;
+    FloatingActionButton mFab;
 
     Bitmap mPhoto;
     byte[] mImage;
@@ -129,11 +132,12 @@ public class AddPlayerFragment extends Fragment {
 
     private void wireUpViews(View rootView) {
         mButtonConfirmPlayer=(Button) rootView.findViewById(R.id.button_confirm_player);
-        mPhotoPlayer=(ImageButton)rootView.findViewById(R.id.image_button_player_photo);
+        mPhotoPlayer=(ImageView)rootView.findViewById(R.id.image_button_player_photo);
         mEditTextPlayername=(EditText)rootView.findViewById(R.id.edit_text_player_name);
         mSwitchTeam=(Switch)rootView.findViewById(R.id.switch_player_team);
         mTeamRed=(TextView)rootView.findViewById(R.id.text_view_red_team);
         mTeamBlue=(TextView)rootView.findViewById(R.id.text_view_blue_team);
+        mFab=(FloatingActionButton)rootView.findViewById(R.id.fabBtn);
     }
 
     private void convertBitmapImageToByteArray() {
@@ -146,7 +150,7 @@ public class AddPlayerFragment extends Fragment {
 
         mPhoto = BitmapFactory.decodeResource(getActivity().getResources(),R.drawable.placeholder_male_superhero);
 
-        mPhotoPlayer.setOnClickListener(new View.OnClickListener() {
+        mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);

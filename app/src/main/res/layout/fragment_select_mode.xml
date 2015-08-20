@@ -2,12 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="200dp"
-    android:paddingBottom="200dp"
-    tools:context="co.mobilemakers.drinking.SelectModeFragment"
-    android:gravity="center_vertical|center_horizontal"
+              tools:context="co.mobilemakers.drinking.SelectModeFragment"
               android:background="#FFFFFF"
-    >
+              android:gravity="center_vertical">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -18,14 +15,16 @@
         android:text="@string/text_view_game_mode"
         android:id="@+id/text_view_game_mode"
         android:layout_gravity="center_horizontal"
-        style="@style/condensed_normal_large">
+        style="@style/condensed_normal_large"
+        android:layout_margin="20dp">
     </TextView>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:layout_margin="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -61,7 +60,8 @@
         android:layout_height="wrap_content"
         android:text="@string/button_add_players"
         android:id="@+id/button_add_players"
+        style="@style/btnStyleYellow"
         android:layout_gravity="center_horizontal"
-        style="@style/btnStyleYellow" />
+        android:layout_margin="20dp"/>
 
 </LinearLayout>

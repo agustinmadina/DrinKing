@@ -11,12 +11,14 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.graphics.drawable.DrawableCompat;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
@@ -55,6 +57,7 @@ public class ChallengeFragment extends Fragment {
     ImageButton mButtonWinPlayer2;
     Bundle mBundle;
     TextView mTextViewPenalty;
+    LinearLayout mScoreLayout;
 
 
 
@@ -82,6 +85,8 @@ public class ChallengeFragment extends Fragment {
             preparePlayer1Solo();
             preparePlayer2Solo();
             preparePenaltyTextSoloMode();
+            mScoreLayout.setVisibility(View.GONE);
+
         } else {
             retrieveTeams();
             checkIfTeamRedIsTheWinner();
@@ -115,6 +120,7 @@ public class ChallengeFragment extends Fragment {
                 break;
             case 3:
                 mPenaltyText = String.format(getString(R.string.has_to_drink),"Red Team") + mPenaltyDrinks;
+                mTextViewPenalty.setTextColor(getResources().getColor(R.color.accent));
                 break;
         }
     }

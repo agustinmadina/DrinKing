@@ -16,13 +16,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
 
 
 /**
@@ -33,7 +31,7 @@ public class AddPlayerFragment extends Fragment {
 
     Button mButtonConfirmPlayer;
     ImageView mPhotoPlayer;
-    EditText mEditTextPlayername;
+    EditText mEditTextPlayerName;
     Switch mSwitchTeam;
     Player mPlayer;
     String mName, mTeam;
@@ -54,11 +52,11 @@ public class AddPlayerFragment extends Fragment {
         wireUpViews(rootView);
         prepareImageButton();
         prepareConfirmButtonListener();
-        mEditTextPlayername.addTextChangedListener(watcher);
+        mEditTextPlayerName.addTextChangedListener(watcher);
         if (getActivity().getIntent().getStringExtra(SelectModeFragment.GAME_MODE).equals(SelectModeFragment.GAME_MODE_SOLO)){
-            mSwitchTeam.setVisibility(View.INVISIBLE);
-            mTeamBlue.setVisibility(View.INVISIBLE);
-            mTeamRed.setVisibility(View.INVISIBLE);
+            mSwitchTeam.setVisibility(View.GONE);
+            mTeamBlue.setVisibility(View.GONE);
+            mTeamRed.setVisibility(View.GONE);
         }else{
             mSwitchTeam.setVisibility(View.VISIBLE);
             mTeamBlue.setVisibility(View.VISIBLE);
@@ -108,7 +106,7 @@ public class AddPlayerFragment extends Fragment {
 
         @Override
         public void afterTextChanged(Editable s) {
-            if (TextUtils.isEmpty(mEditTextPlayername.getText())) {
+            if (TextUtils.isEmpty(mEditTextPlayerName.getText())) {
                 mButtonConfirmPlayer.setEnabled(false);
             } else {
                 mButtonConfirmPlayer.setEnabled(true);
@@ -119,7 +117,7 @@ public class AddPlayerFragment extends Fragment {
     };
 
     private void preparePlayer() {
-        mName=mEditTextPlayername.getText().toString();
+        mName= mEditTextPlayerName.getText().toString();
         if (mSwitchTeam.isChecked()){
             mTeam=PlayerListFragment.RED;
         }
@@ -133,7 +131,7 @@ public class AddPlayerFragment extends Fragment {
     private void wireUpViews(View rootView) {
         mButtonConfirmPlayer=(Button) rootView.findViewById(R.id.button_confirm_player);
         mPhotoPlayer=(ImageView)rootView.findViewById(R.id.image_button_player_photo);
-        mEditTextPlayername=(EditText)rootView.findViewById(R.id.edit_text_player_name);
+        mEditTextPlayerName =(EditText)rootView.findViewById(R.id.edit_text_player_name);
         mSwitchTeam=(Switch)rootView.findViewById(R.id.switch_player_team);
         mTeamRed=(TextView)rootView.findViewById(R.id.text_view_red_team);
         mTeamBlue=(TextView)rootView.findViewById(R.id.text_view_blue_team);

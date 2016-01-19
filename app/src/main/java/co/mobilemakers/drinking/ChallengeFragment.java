@@ -73,6 +73,7 @@ public class ChallengeFragment extends Fragment {
         prepareWinButtonsAndNextChallenge(rootView);
         mChallenges = retrieveChallenges();
         mTextViewPenalty = (TextView) rootView.findViewById(R.id.text_view_penalty);
+        mScoreLayout = (LinearLayout) rootView.findViewById(R.id.score_layout);
         wireUpChallengeText(rootView);
         prepareChallengeText();
         mBundle = this.getArguments();

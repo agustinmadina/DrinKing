@@ -70,7 +70,7 @@
         <EditText
             android:layout_width="144dp"
             android:layout_height="wrap_content"
-            android:inputType="textCapSentences"
+            android:inputType="textCapWords"
             android:ems="10"
             android:id="@+id/edit_text_player_name"
             android:layout_gravity="center_horizontal"

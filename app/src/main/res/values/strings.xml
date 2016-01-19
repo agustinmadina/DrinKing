@@ -49,5 +49,7 @@
     <string name="button_new_game">NEW GAME</string>
     <string name="text_rules_content">Select if you wanna play by teams or solo. Add players to each team fast and start playing!  One on one random challenges will start to appear in screen, together with a sip penalty to a random player or a whole team. After the penalty is paid, both players assigned for the current challenge displayed will start playing it.  Player who wins gets a point for himself/herself if the game mode is solo, or to his/her whole team if the game mode is by teams. After selecting who won, another challenge will appear, and so on.  When will the game finish? Who will be the next DrinKing?  If you selected Solo, the first player who wins 5 challenges wins the game and will become the current DrinKing! If you selected Team game mode, the first team who wins 10 challenges wins the game and will become the current DrinKings! Always remember, IF YOU DRINK DON\'T DRIVE!!!</string>
     <string name="text_rules_title">DrinKing\'s Rules</string>
+    <string name="blue">Blue</string>
+    <string name="red">Red</string>
 
 </resources>

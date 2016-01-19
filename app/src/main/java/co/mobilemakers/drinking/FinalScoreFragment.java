@@ -61,54 +61,54 @@ public class FinalScoreFragment extends Fragment {
         wiringUpWinnerView(rootView);
         prepareButtonRestart(rootView);
         displayingWinnerView();
-        prepareTextViewQuotesAndGetQuote(rootView);
+//        prepareTextViewQuotesAndGetQuote(rootView);
         return rootView;
     }
-
-    private void prepareTextViewQuotesAndGetQuote(View rootView) {
-        mTextViewQuotes = (TextView) rootView.findViewById(R.id.text_view_quotes);
-        try {
-            URL url = constructURLQuery();
-            Request request = new Request.Builder().url(url.toString()).build();
-            OkHttpClient client = new OkHttpClient();
-            client.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(Request request, IOException e) {
-                    e.printStackTrace();
-                }
-
-                @Override
-                public void onResponse(Response response) throws IOException {
-                    final String responseString = response.body().string();
-
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            mTextViewQuotes.setText(responseString);
-                        }
-                    });
-                }
-            });
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private URL constructURLQuery() throws MalformedURLException {
-        final String IHEART_QUOTES_BASE_URL = "iheartquotes.com";
-        final String API = "api";
-        final String VERSION_PATH = "v1";
-        final String QUOTES_ENDPOINT = "random";
-
-        Uri.Builder builder = new Uri.Builder();
-        builder.scheme("http").authority(IHEART_QUOTES_BASE_URL).
-                appendPath(API).
-                appendPath(VERSION_PATH).
-                appendPath(QUOTES_ENDPOINT);
-        Uri uri = builder.build();
-
-        return new URL(uri.toString());
-    }
+//
+//    private void prepareTextViewQuotesAndGetQuote(View rootView) {
+//        mTextViewQuotes = (TextView) rootView.findViewById(R.id.text_view_quotes);
+//        try {
+//            URL url = constructURLQuery();
+//            Request request = new Request.Builder().url(url.toString()).build();
+//            OkHttpClient client = new OkHttpClient();
+//            client.newCall(request).enqueue(new Callback() {
+//                @Override
+//                public void onFailure(Request request, IOException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                @Override
+//                public void onResponse(Response response) throws IOException {
+//                    final String responseString = response.body().string();
+//
+//                    getActivity().runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            mTextViewQuotes.setText(responseString);
+//                        }
+//                    });
+//                }
+//            });
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    private URL constructURLQuery() throws MalformedURLException {
+//        final String IHEART_QUOTES_BASE_URL = "iheartquotes.com";
+//        final String API = "api";
+//        final String VERSION_PATH = "v1";
+//        final String QUOTES_ENDPOINT = "random";
+//
+//        Uri.Builder builder = new Uri.Builder();
+//        builder.scheme("http").authority(IHEART_QUOTES_BASE_URL).
+//                appendPath(API).
+//                appendPath(VERSION_PATH).
+//                appendPath(QUOTES_ENDPOINT);
+//        Uri uri = builder.build();
+//
+//        return new URL(uri.toString());
+//    }
 
     private void wiringUpWinnerView(View rootView) {
         mImageViewWinner = (ImageView) rootView.findViewById(R.id.image_view_winner);

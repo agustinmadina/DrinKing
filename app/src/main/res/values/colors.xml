@@ -9,5 +9,7 @@
   <color name="icons">#212121</color>
   <color name="divider">#B6B6B6</color>
   <color name="grey">#787878</color>
+  <color name="material_blue">#1976D2</color>
+
 
 </resources>

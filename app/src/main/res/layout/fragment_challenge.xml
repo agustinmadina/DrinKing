@@ -6,101 +6,171 @@
               android:background="#FFFFFF"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Somebody drinks 6 sips"
-        android:id="@+id/text_view_penalty"
-        android:layout_gravity="center_horizontal"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        style="@style/condensed_normal_large">
-    </TextView>
-
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        >
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_weight="1">
-
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/button_win_player_1"
-                android:src="@drawable/placeholder_male_superhero"
-                android:scaleType="centerCrop"
-                android:adjustViewBounds="false"
-                android:background="@null"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Player 1"
-                android:id="@+id/text_view_player_1"
-                android:layout_gravity="center_horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                style="@style/condensed_normal_large">
-            </TextView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_weight="1">
-
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/button_win_player_2"
-                android:src="@drawable/placeholder_male_superhero"
-                android:scaleType="centerCrop"
-                android:background="@null"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Player 2"
-                android:id="@+id/text_view_player_2"
-                android:layout_gravity="center_horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                style="@style/condensed_normal_large">
-            </TextView>
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Challenge title"
-        android:id="@+id/text_view_challenge_title"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:gravity="center_horizontal"
-        style="@style/condensed_normal_large">
-    </TextView>
+        android:layout_height="0dp"
+        android:layout_weight="10">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/condensed_normal_large"
+                    android:text="@string/red"
+                    android:textColor="@color/accent"
+                    android:id="@+id/textView3"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Score"
+                    style="@style/condensed_normal_large"
+                    android:id="@+id/text_view_red_score"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blue"
+                    android:id="@+id/textView"
+                    android:textColor="@color/material_blue"
+                    style="@style/condensed_normal_large"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Score"
+                    android:id="@+id/text_view_blue_score"
+                    style="@style/condensed_normal_large"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Somebody drinks 6 sips"
+            android:id="@+id/text_view_penalty"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="10dp"
+            style="@style/condensed_normal_large"
+            android:layout_weight="2"
+            android:gravity="center">
+        </TextView>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center_horizontal"
+            android:layout_weight="8">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/button_win_player_1"
+                    android:src="@mipmap/placeholder"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="false"
+                    android:background="@null"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Player 1"
+                    android:id="@+id/text_view_player_1"
+                    android:layout_gravity="center_horizontal"
+                    style="@style/condensed_normal_large"
+                    android:layout_weight="5"
+                    android:gravity="center">
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/button_win_player_2"
+                    android:src="@mipmap/placeholder"
+                    android:scaleType="centerCrop"
+                    android:layout_weight="1"
+                    android:background="@null"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Player 2"
+                    android:id="@+id/text_view_player_2"
+                    android:layout_gravity="center_horizontal"
+                    style="@style/condensed_normal_large"
+                    android:layout_weight="5"
+                    android:gravity="center">
+                </TextView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Challenge title"
+            android:id="@+id/text_view_challenge_title"
+            android:paddingTop="10dp"
+            android:gravity="center_horizontal"
+            style="@style/condensed_normal_large"
+            android:layout_weight="2">
+        </TextView>
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView" >
+        android:layout_height="0dp"
+        android:id="@+id/scrollView"
+        android:layout_weight="7"
+        >
 
         <TextView
             android:layout_width="wrap_content"

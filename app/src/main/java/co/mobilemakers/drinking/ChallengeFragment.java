@@ -4,10 +4,13 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +22,7 @@ import android.widget.TextView;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +49,8 @@ public class ChallengeFragment extends Fragment {
     TextView mTextViewChallengeTitle;
     TextView mTextViewNamePlayer1;
     TextView mTextViewNamePlayer2;
+    TextView mTextViewBlueScore;
+    TextView mTextViewRedScore;
     ImageButton mButtonWinPlayer1;
     ImageButton mButtonWinPlayer2;
     Bundle mBundle;
@@ -105,18 +111,17 @@ public class ChallengeFragment extends Fragment {
                 break;
             case 2:
                 mPenaltyText = String.format(getString(R.string.has_to_drink),"Blue Team") + mPenaltyDrinks;
-                mTextViewPenalty.setTextColor(Color.BLUE);
+                mTextViewPenalty.setTextColor(getResources().getColor(R.color.material_blue));
                 break;
             case 3:
                 mPenaltyText = String.format(getString(R.string.has_to_drink),"Red Team") + mPenaltyDrinks;
-                mTextViewPenalty.setTextColor(Color.RED);
                 break;
         }
     }
 
     private void preparePenaltyTextSoloMode() {
         Player playerWithPenalty = mTeamUnique.get(mRandom.nextInt(mTeamUnique.size()));
-        mPenaltyText = String.format(getString(R.string.has_to_drink),playerWithPenalty.getName()) + mPenaltyDrinks;
+        mPenaltyText = String.format(getString(R.string.has_to_drink), playerWithPenalty.getName()) + mPenaltyDrinks;
     }
 
     private void setPenaltyAmountOfDrinks() {
@@ -128,6 +133,7 @@ public class ChallengeFragment extends Fragment {
         for (Player p:mTeamBlue) {
             sum += p.getScore();
         }
+        mTextViewBlueScore.setText(String.valueOf(sum));
         if (sum == 10) {
             FragmentManager fragmentManager = getFragmentManager();
             Bundle bundle = new Bundle();
@@ -146,6 +152,7 @@ public class ChallengeFragment extends Fragment {
         for (Player p:mTeamRed) {
             sum += p.getScore();
         }
+        mTextViewRedScore.setText(String.valueOf(sum));
         if (sum == 10) {
             FragmentManager fragmentManager = getFragmentManager();
             Bundle bundle = new Bundle();
@@ -180,8 +187,18 @@ public class ChallengeFragment extends Fragment {
             mBluePlayer = mRandom.nextInt(mTeamUnique.size());
         }
         Player player = mTeamUnique.get(mBluePlayer);
-        mButtonWinPlayer2.setImageBitmap(getBitmap(player));
         mTextViewNamePlayer2.setText(player.getName());
+        mTextViewNamePlayer2.setTextColor(getResources().getColor(R.color.material_blue));
+        Drawable drawable = new BitmapDrawable(getResources(), getBitmap(player));
+        if (drawable.equals(getResources().getDrawable(R.mipmap.placeholder))) {
+            drawable = DrawableCompat.wrap(getResources().getDrawable(R.mipmap.placeholder));
+            DrawableCompat.setTint(drawable, getResources().getColor(R.color.material_blue));
+            drawable = DrawableCompat.unwrap(drawable);
+
+        }
+        if (mButtonWinPlayer2 != null) {
+            mButtonWinPlayer2.setImageDrawable(drawable);
+        }
     }
 
     @Override
@@ -193,8 +210,19 @@ public class ChallengeFragment extends Fragment {
     private void preparePlayer1Solo() {
         mRedPlayer = mRandom.nextInt(mTeamUnique.size());
         Player player = mTeamUnique.get(mRedPlayer);
-        mButtonWinPlayer1.setImageBitmap(getBitmap(player));
         mTextViewNamePlayer1.setText(player.getName());
+        mTextViewNamePlayer2.setTextColor(getResources().getColor(R.color.accent));
+        Drawable drawable = new BitmapDrawable(getResources(), getBitmap(player));
+        if (drawable.equals(getResources().getDrawable(R.mipmap.placeholder))) {
+            drawable = DrawableCompat.wrap(getResources().getDrawable(R.mipmap.placeholder));
+            DrawableCompat.setTint(drawable, getResources().getColor(R.color.accent));
+            drawable = DrawableCompat.unwrap(drawable);
+
+        }
+        if (mButtonWinPlayer1 != null) {
+            mButtonWinPlayer1.setImageDrawable(drawable);
+        }
+
     }
 
     private void retrieveUniqueTeam() {
@@ -238,8 +266,19 @@ public class ChallengeFragment extends Fragment {
     private void prepareBlueTeamPlayerView() {
         mBluePlayer = mRandom.nextInt(mTeamBlue.size());
         Player player = mTeamBlue.get(mBluePlayer);
-        mButtonWinPlayer2.setImageBitmap(getBitmap(player));
+        Drawable drawable = new BitmapDrawable(getResources(), getBitmap(player));
+        if (drawable.equals(getResources().getDrawable(R.mipmap.placeholder))) {
+            drawable = DrawableCompat.wrap(getResources().getDrawable(R.mipmap.placeholder));
+            DrawableCompat.setTint(drawable, getResources().getColor(R.color.material_blue));
+            drawable = DrawableCompat.unwrap(drawable);
+
+        }
+        if (mButtonWinPlayer2 != null) {
+            mButtonWinPlayer2.setImageDrawable(drawable);
+        }
         mTextViewNamePlayer2.setText(player.getName());
+        mTextViewNamePlayer2.setTextColor(getResources().getColor(R.color.material_blue));
+
     }
 
     private void retrieveTeams() {
@@ -250,13 +289,25 @@ public class ChallengeFragment extends Fragment {
     private void prepareRedTeamPlayerView() {
         mRedPlayer = mRandom.nextInt(mTeamRed.size());
         Player player = mTeamRed.get(mRedPlayer);
-        mButtonWinPlayer1.setImageBitmap(getBitmap(player));
+        Drawable drawable = new BitmapDrawable(getResources(), getBitmap(player));
+        if (drawable.equals(getResources().getDrawable(R.mipmap.placeholder))) {
+            drawable = DrawableCompat.wrap(getResources().getDrawable(R.mipmap.placeholder));
+            DrawableCompat.setTint(drawable, getResources().getColor(R.color.accent));
+            drawable = DrawableCompat.unwrap(drawable);
+        }
+        if (mButtonWinPlayer2 != null) {
+            mButtonWinPlayer2.setImageDrawable(drawable);
+        }
         mTextViewNamePlayer1.setText(player.getName());
+        mTextViewNamePlayer1.setTextColor(getResources().getColor(R.color.accent));
     }
 
     private void wireUpPlayersView(View rootView) {
         mTextViewNamePlayer1 = (TextView) rootView.findViewById(R.id.text_view_player_1);
         mTextViewNamePlayer2 = (TextView) rootView.findViewById(R.id.text_view_player_2);
+        mTextViewBlueScore = (TextView) rootView.findViewById(R.id.text_view_blue_score);
+        mTextViewRedScore = (TextView) rootView.findViewById(R.id.text_view_red_score);
+
     }
 
     private void wireUpChallengeText(View rootView) {

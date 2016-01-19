@@ -148,7 +148,7 @@ public class AddPlayerFragment extends Fragment {
 
     private void prepareImageButton() {
 
-        mPhoto = BitmapFactory.decodeResource(getActivity().getResources(),R.drawable.placeholder_male_superhero);
+        mPhoto = BitmapFactory.decodeResource(getActivity().getResources(),R.mipmap.placeholder);
 
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override

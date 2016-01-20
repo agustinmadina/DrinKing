@@ -19,7 +19,7 @@
     <string name="dice">Dados</string>
     <string name="edit_text_new_challenge_content">Ingresa la descripcion del desafio aqui</string>
     <string name="edit_text_new_challenge_name">Ingresa el nombre del nuevo desafio aqui</string>
-    <string name="has_to_drink">Tragos de penalizacion para %s :</string>
+    <string name="has_to_drink">Tragos de penalizacion para %s : </string>
     <string name="hello_blank_fragment"></string>
     <string name="insufficient_players">Dos o mas jugadores son necerios para jugar!</string>
     <string name="insufficient_teams">Agregue aunque sea un jugador por equipo!</string>
@@ -46,4 +46,6 @@
     <string name="title_activity_player_list">Lista de Jugadores</string>
     <string name="title_activity_settings">Configuracion</string>
     <string name="winner_solo_text">El nuevo DrinKing es %s!!!</string>
+    <string name="blue">Azul</string>
+    <string name="red">Rojo</string>
 </resources>

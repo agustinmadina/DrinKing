@@ -1,187 +1,211 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent"
-    tools:context="co.mobilemakers.drinking.ChallengeFragment"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
               android:background="#FFFFFF"
+              android:orientation="vertical"
+              tools:context="co.mobilemakers.drinking.ChallengeFragment"
     >
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10">
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:id="@+id/score_layout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:id="@+id/score_layout">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/textView3"
+                    style="@style/condensed_normal_large"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/condensed_normal_large"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
                     android:text="@string/red"
                     android:textColor="@color/accent"
-                    android:id="@+id/textView3"
-                    android:layout_gravity="center_horizontal"
-                    android:gravity="center"/>
+                    android:textSize="16dp"/>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Score"
-                    style="@style/condensed_normal_large"
                     android:id="@+id/text_view_red_score"
+                    style="@style/condensed_normal_large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:text="Score"
+                    android:textSize="16dp"/>
 
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/textView"
+                    style="@style/condensed_normal_large"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/blue"
-                    android:id="@+id/textView"
-                    android:textColor="@color/material_blue"
-                    style="@style/condensed_normal_large"
                     android:layout_gravity="center_horizontal"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:text="@string/blue"
+                    android:textColor="@color/material_blue"
+                    android:textSize="16dp"/>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Score"
                     android:id="@+id/text_view_blue_score"
                     style="@style/condensed_normal_large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:text="Score"
+                    android:textSize="16dp"/>
             </LinearLayout>
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Somebody drinks 6 sips"
             android:id="@+id/text_view_penalty"
-            android:layout_gravity="center_horizontal"
-            android:paddingBottom="10dp"
             style="@style/condensed_normal_large"
-            android:layout_weight="2"
-            android:gravity="center">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:text="Somebody drinks 6 sips"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="16dp"
+            android:layout_gravity="center"
+            android:textIsSelectable="false">
         </TextView>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="190dp"
             android:gravity="center_horizontal"
-            android:layout_weight="8">
+            android:orientation="horizontal"
+            android:id="@+id/layout_players">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
                     android:id="@+id/button_win_player_1"
-                    android:src="@mipmap/placeholder"
-                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:adjustViewBounds="false"
                     android:background="@null"
-                    android:layout_weight="1"/>
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/placeholder"
+                    android:layout_weight="10"/>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Player 1"
                     android:id="@+id/text_view_player_1"
-                    android:layout_gravity="center_horizontal"
                     style="@style/condensed_normal_large"
-                    android:layout_weight="5"
-                    android:gravity="center">
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Player 1"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="16dp">
                 </TextView>
 
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
                     android:id="@+id/button_win_player_2"
-                    android:src="@mipmap/placeholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@null"
                     android:scaleType="centerCrop"
-                    android:layout_weight="1"
-                    android:background="@null"/>
+                    android:src="@mipmap/placeholder"
+                    android:layout_weight="10"/>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Player 2"
                     android:id="@+id/text_view_player_2"
-                    android:layout_gravity="center_horizontal"
                     style="@style/condensed_normal_large"
-                    android:layout_weight="5"
-                    android:gravity="center">
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Player 2"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="16dp">
                 </TextView>
 
             </LinearLayout>
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Challenge title"
             android:id="@+id/text_view_challenge_title"
-            android:paddingTop="10dp"
-            android:gravity="center_horizontal"
             style="@style/condensed_normal_large"
-            android:layout_weight="2"
-            android:textStyle="bold">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingTop="10dp"
+            android:text="Challenge title"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_gravity="center">
         </TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/card_layout"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp">
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_margin="10dp"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/text_view_challenge"
+                    style="@style/condensed_normal_large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="16dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textAlignment="center">
+                </TextView>
+            </ScrollView>
+        </LinearLayout>
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:id="@+id/scrollView"
-        android:layout_weight="7"
-        >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/text_view_challenge"
-            style="@style/condensed_normal_large">
-        </TextView>
-    </ScrollView>
 
 
 </LinearLayout>

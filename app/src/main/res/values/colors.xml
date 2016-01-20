@@ -11,5 +11,7 @@
   <color name="grey">#787878</color>
   <color name="material_blue">#1976D2</color>
 
+  <color name="ln_lightest_grey">#F9F9F9</color>
+  <color name="ln_light_grey">#DDD</color>
 
 </resources>

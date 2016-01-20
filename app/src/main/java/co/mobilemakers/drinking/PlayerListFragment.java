@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ListFragment;
@@ -27,7 +28,7 @@ import java.util.List;
 public class PlayerListFragment extends ListFragment {
 
     PlayerAdapter mAdapter;
-    Button mButtonAddPlayer;
+    FloatingActionButton mButtonAddPlayer;
     Button mButtonStartGame;
     ArrayList<Player> mPlayers;
     Player mPlayer;
@@ -125,7 +126,7 @@ public class PlayerListFragment extends ListFragment {
     }
 
     private void wireUpViews(View rootView) {
-        mButtonAddPlayer = (Button) rootView.findViewById(R.id.button_add_player);
+        mButtonAddPlayer = (FloatingActionButton) rootView.findViewById(R.id.fabBtnAddPlayer);
     }
 
 

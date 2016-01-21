@@ -8,60 +8,17 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/text_view_game_mode"
-        android:id="@+id/text_view_game_mode"
-        android:layout_gravity="center_horizontal"
-        style="@style/condensed_normal_large"
-        android:layout_margin="20dp">
-    </TextView>
-
-    <LinearLayout
-        android:orientation="horizontal"
+    <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_margin="20dp">
+        android:layout_height="200dp"
+        android:id="@+id/image_button_solo"
+        android:src="@drawable/keep_calm_blue"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/switch_game_mode_solo"
-            android:id="@+id/text_view_mode_solo"
-            android:paddingRight="15dp"
-            style="@style/condensed_normal_large">
-        </TextView>
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/switch_game_mode"
-            android:padding="10dp"
-            android:checked="true"
-            android:showText="false" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/switch_game_mode_team"
-            android:id="@+id/text_view_mode_team"
-            android:paddingLeft="15dp"
-            style="@style/condensed_normal_large">
-        </TextView>
-    </LinearLayout>
-
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_add_players"
-        android:id="@+id/button_add_players"
-        style="@style/btnStyleYellow"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"/>
+        android:layout_height="200dp"
+        android:id="@+id/image_button_team"
+        android:src="@drawable/keep_calm_red"
+        />
 
 </LinearLayout>

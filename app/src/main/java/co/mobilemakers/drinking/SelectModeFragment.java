@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Switch;
 
 import java.util.ArrayList;
@@ -21,44 +22,43 @@ import java.util.List;
  */
 public class SelectModeFragment extends Fragment {
 
-    Switch mSwitchGameMode;
-    Button mButtonAddPlayers;
+    ImageButton mButtonBeginSoloGame;
+    ImageButton mButtonBeginTeamGame;
 
     public static final String GAME_MODE = "game mode";
     public static final String GAME_MODE_SOLO = "Solo";
     public static final String GAME_MODE_TEAM = "Team";
 
-
-
     public SelectModeFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_select_mode, container, false);
-        wireUpSwitch(rootView);
-        mButtonAddPlayers = (Button) rootView.findViewById(R.id.button_add_players);
-        mButtonAddPlayers.setOnClickListener(new View.OnClickListener() {
+        mButtonBeginSoloGame = (ImageButton) rootView.findViewById(R.id.image_button_solo);
+        mButtonBeginTeamGame = (ImageButton) rootView.findViewById(R.id.image_button_team);
+        View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                bundle.putString(GAME_MODE, getGameMode());
+                bundle.putString(GAME_MODE, getGameMode(v));
                 PlayerListFragment playerListFragment = new PlayerListFragment();
                 playerListFragment.setArguments(bundle);
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.container, playerListFragment).addToBackStack(null).commit();
             }
-        });
+        };
+        mButtonBeginSoloGame.setOnClickListener(onClickListener);
+        mButtonBeginTeamGame.setOnClickListener(onClickListener);
         return rootView;
     }
 
-    private String getGameMode() {
+    private String getGameMode(View v) {
         String gameMode;
-        if (mSwitchGameMode.isChecked()){
+        if (v.getId()==R.id.image_button_team){
             gameMode = GAME_MODE_TEAM;
         }
         else{
@@ -66,11 +66,4 @@ public class SelectModeFragment extends Fragment {
         }
         return gameMode;
     }
-
-    private void wireUpSwitch(View rootView) {
-        mSwitchGameMode = (Switch) rootView.findViewById(R.id.switch_game_mode);
-    }
-
-
-
 }

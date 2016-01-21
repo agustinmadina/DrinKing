@@ -20,7 +20,7 @@
         android:layout_height="match_parent">
 
         <ListView
-            android:id="@+id/list_players"
+            android:id="@id/android:list"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="10"
@@ -44,7 +44,7 @@
         android:layout_marginBottom="-32dp"
         android:clickable="true"
         android:src="@drawable/abc_ic_voice_search_api_mtrl_alpha"
-        app:layout_anchor="@id/list_players"
+        app:layout_anchor="@id/android:list"
         app:layout_anchorGravity="bottom|right|end"/>
 
 </android.support.design.widget.CoordinatorLayout>

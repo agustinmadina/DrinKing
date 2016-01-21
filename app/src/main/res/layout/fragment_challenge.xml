@@ -188,8 +188,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:layout_margin="10dp"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                >
 
                 <TextView
                     android:id="@+id/text_view_challenge"
@@ -199,7 +199,8 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textSize="16dp"
                     android:gravity="center_vertical|center_horizontal"
-                    android:textAlignment="center">
+                    android:textAlignment="center"
+                    android:padding="10dp">
                 </TextView>
             </ScrollView>
         </LinearLayout>
